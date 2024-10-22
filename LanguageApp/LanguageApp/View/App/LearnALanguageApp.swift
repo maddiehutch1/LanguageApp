@@ -11,7 +11,7 @@ import SwiftUI
 struct LearnALanguageApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreenView(languageViewModel: LanguageViewModel())
         }
     }
 }

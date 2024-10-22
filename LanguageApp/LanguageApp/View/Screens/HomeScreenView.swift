@@ -7,15 +7,35 @@
 
 import SwiftUI
 
+
 struct HomeScreenView: View {
     var languageViewModel: LanguageViewModel
     
+    private let adaptiveColumns = [
+        GridItem(.adaptive(minimum: 170))
+    ]
+    
     var body: some View {
-        NavigationStack {
-            List(languageViewModel.topics) {
-                topic in Text(topic.title)
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: adaptiveColumns, spacing: 10) {
+                    ForEach(languageViewModel.topics, id: \.self) { topic in
+                        NavigationLink(destination: LessonTopicView(topic: topic)) {
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 170, height: 170)
+                                    .foregroundColor(.cyan)
+                                    .cornerRadius(30)
+                                    //.shadow(radius: 10, x: 0, y: 10)
+                                Text(topic.title)
+                                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    }
+                }
             }
-            .listStyle(.plain)
+            .padding()
             .navigationTitle("Learn \(languageViewModel.languageName)!")
         }
     }

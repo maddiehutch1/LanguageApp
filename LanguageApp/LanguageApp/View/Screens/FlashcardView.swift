@@ -6,3 +6,17 @@
 //
 
 import SwiftUI
+
+struct FlashcardView: View {
+    var body: some View {
+        VStack {
+            Text("This is the flashcard view")
+        }
+        .navigationTitle("Flashcards")
+        .background(Color.lightTan)
+    }
+}
+
+#Preview {
+    FlashcardView()
+}

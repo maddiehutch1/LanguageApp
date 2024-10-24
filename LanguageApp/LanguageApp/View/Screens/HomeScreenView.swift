@@ -16,6 +16,8 @@ struct HomeScreenView: View {
     ]
     
     var body: some View {
+        //Image("LearntheLingoAppLogo")
+        //    .resizable()
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: adaptiveColumns, spacing: 10) {
@@ -24,9 +26,9 @@ struct HomeScreenView: View {
                             ZStack {
                                 Rectangle()
                                     .frame(width: 170, height: 170)
-                                    .foregroundColor(.cyan)
+                                    .foregroundColor(.secondary)
                                     .cornerRadius(30)
-                                    //.shadow(radius: 10, x: 0, y: 10)
+                                //.shadow(radius: 10, x: 0, y: 10)
                                 Text(topic.title)
                                     .font(.system(size: 20, weight: .bold, design: .rounded))
                                     .foregroundColor(.white)
@@ -36,7 +38,20 @@ struct HomeScreenView: View {
                 }
             }
             .padding()
-            .navigationTitle("Learn \(languageViewModel.languageName)!")
+            //.navigationTitle("Learn \(languageViewModel.languageName)!")
+            .navigationBarTitleDisplayMode(.inline) // Set title to inline
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Image("TransparentLogoLingo") // Replace with your custom image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 80)
+                        Spacer()
+                    }
+                }
+            }
+            .background(Color.lightTan)
         }
     }
 }

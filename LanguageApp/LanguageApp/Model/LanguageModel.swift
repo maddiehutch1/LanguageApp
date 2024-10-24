@@ -59,12 +59,121 @@ struct SpanishLessonPlan: LessonPlan {
         // Numbers
         Language.Topic(
             title: "Numbers",
-            lessonText: "testing",
+            lessonText: """
+                In this lesson, you'll learn how to count in Spanish. Here are the numbers 1 to 10:
+
+                1. Uno
+                2. Dos
+                3. Tres
+                4. Cuatro
+                5. Cinco
+                6. Seis
+                7. Siete
+                8. Ocho
+                9. Nueve
+                10. Diez
+
+                For numbers beyond 10, here are a few examples:
+                11. Once
+                12. Doce
+                13. Trece
+                14. Catorce
+                15. Quince
+                20. Veinte
+                30. Treinta
+                100. Cien
+
+                To form larger numbers, combine them:
+                - 21: Veintiuno
+                - 22: Veintidós
+                - 31: Treinta y uno
+                - 32: Treinta y dos
+                - 100: Ciento (when not exactly 100)
+
+                Practice by saying the numbers out loud to get used to the pronunciation!
+            """,
+
             vocabulary: [
                 Language.Term(
                     word: "uno",
+                    translation: "one (1)"
+                ),
+                Language.Term(
+                    word: "dos",
+                    translation: "two (2)"
+                ),
+                Language.Term(
+                    word: "tres",
+                    translation: "three (3)"
+                ),
+                Language.Term(
+                    word: "cuatro",
+                    translation: "four (4)"
+                ),
+                Language.Term(
+                    word: "cinco",
+                    translation: "five (5)"
+                ),
+                Language.Term(
+                    word: "seis",
+                    translation: "six (6)"
+                ),
+                Language.Term(
+                    word: "siete",
+                    translation: "seven (7)"
+                ),
+                Language.Term(
+                    word: "ocho",
+                    translation: "eight (8)"
+                ),
+                Language.Term(
+                    word: "nueve",
+                    translation: "nine (9)"
+                ),
+                Language.Term(
+                    word: "diez",
+                    translation: "ten (10)"
+                ),
+                Language.Term(
+                    word: "veinte",
+                    translation: "twenty (20)"
+                ),
+                Language.Term(
+                    word: "treinta",
+                    translation: "thirty (30)"
+                ),
+                Language.Term(
+                    word: "cuarenta",
+                    translation: "forty (40)"
+                ),
+                Language.Term(
+                    word: "cincuenta",
+                    translation: "fifty (50)"
+                ),
+                Language.Term(
+                    word: "sesenta",
+                    translation: "sixty (60)"
+                ),
+                Language.Term(
+                    word: "setenta",
+                    translation: "seventy (70)"
+                ),
+                Language.Term(
+                    word: "ochenta",
+                    translation: "eighty (80)"
+                ),
+                Language.Term(
+                    word: "noventa",
+                    translation: "ninety (90)"
+                ),
+                Language.Term(
+                    word: "cien",
+                    translation: "one hundred (100)"
+                ),
+                Language.Term(
+                    word: "uno",
                     translation: "one"
-                )],
+                ),            ],
             quiz: [
                 Language.QuizItem(
                     question: "What is the Spanish word for the number 7?",

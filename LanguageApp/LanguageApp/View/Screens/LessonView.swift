@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct LessonView: View {
+    var languageViewModel: LanguageViewModel
+    
     var body: some View {
         VStack {
-            Text("This is the lesson view")
+            Text(languageViewModel.lessonMaterial)
         }
         .navigationTitle("Lesson")
         .background(Color.lightTan)
     }
+    
 }
 
 #Preview {
-    LessonView()
+    LessonView(languageViewModel: LanguageViewModel())
 }

@@ -29,9 +29,19 @@ struct HomeScreenView: View {
                                     .foregroundColor(.secondary)
                                     .cornerRadius(30)
                                 //.shadow(radius: 10, x: 0, y: 10)
-                                Text(topic.title)
-                                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                                    .foregroundColor(.white)
+                                VStack {
+                                    Text(topic.title)
+                                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                                        .foregroundColor(.white)
+                                    Button{
+                                        languageViewModel.toggleLessonRead(for: topic.title)
+                                    } label: {
+                                        Text("Lesson read: \(languageViewModel.progress(for: topic.title).lessonRead)")
+                                            .font(.system(size: 15, weight: .light, design: .rounded))
+                                            .foregroundColor(.mint)
+                                    }
+                                }
+                                
                             }
                         }
                     }

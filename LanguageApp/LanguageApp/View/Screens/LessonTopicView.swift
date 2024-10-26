@@ -10,23 +10,26 @@ import SwiftUI
 struct LessonTopicView: View {
     
     //@State private var selection: Int = 0
+    var languageViewModel = LanguageViewModel()
     
     var topic: Language.Topic
     
     var body: some View {
-        Text("More info on \(topic.title)")
-            .navigationTitle(topic.title)
+        //Text("More info on \(topic.title)")
         
         NavigationView {
             TabView() { //selection: $selection
                 //Color.blue
-                HomeScreenView(languageViewModel: LanguageViewModel())
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
+                //HomeScreenView(languageViewModel: LanguageViewModel())
+                //    .tabItem {
+                //        Image(systemName: "house")
+                //        Text("Home")
+                //    }
                 //Color.blue
-                LessonView()
+                LessonView(languageViewModel: LanguageViewModel())
+//                    .onAppear {
+//                        languageViewModel.selectedTopic(topic)
+//                    }
                     .tabItem {
                         Image(systemName: "book.fill")
                         Text("Lesson")
@@ -38,14 +41,17 @@ struct LessonTopicView: View {
                         Text("Flashcards")
                     }
                 //Color.blue
-                QuizView()
+                QuizView(languageViewModel: LanguageViewModel())
                     .tabItem {
                         Image(systemName: "square.and.pencil")
                         Text("Quiz")
                     }
                 }
-            .background(Color.lightTan)
+            //.background(Color.lightTan)
+            //.navigationTitle(topic.title)
         }
+        .navigationTitle(topic.title)
+        .background(Color.lightTan)
     }
 }
        

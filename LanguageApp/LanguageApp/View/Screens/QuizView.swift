@@ -7,10 +7,17 @@
 
 import SwiftUI
 
+
 struct QuizView: View {
+    var languageViewModel: LanguageViewModel
     var body: some View {
         VStack {
-            Text("This is the quiz view")
+            Text(languageViewModel.question)
+            ForEach(languageViewModel.options, id: \.self) { option in
+//                Button() {
+//                    print(option)
+//                } label
+            }
         }
         .navigationTitle("Quiz")
         .background(Color.lightTan)
@@ -18,5 +25,5 @@ struct QuizView: View {
 }
 
 #Preview {
-    QuizView()
+    QuizView(languageViewModel: LanguageViewModel())
 }
